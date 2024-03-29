@@ -120,3 +120,16 @@ https://launchschool.com/lessons/4af196b9/assignments/b222ecfb
 
 - "The Protocol Data Unit (PDU) within the IP Protocol is referred to as a packet."
 - "Within both models, the primary function of protocols at this layer is to facilitate communication between hosts (e.g. computers) on different networks."
+
+# The Transport Layer
+
+## Communication Between Processes
+https://launchschool.com/lessons/2a6c7439/assignments/41113e98
+
+### Multiplexing
+
+- "In the context of a communication network, this idea of transmitting multiple signals over a single channel is known as multiplexing, with demultiplexing being the reverse process."
+
+### Port
+
+- "In simple terms a port is an identifier for a specific process running on a host. This identifier is an integer in the range 0-65535."
