@@ -102,7 +102,7 @@ Because a package can take a variety of routes from one IP address to another, t
 
 ### Hop
 
-Each time a package is sent to a different router, a *hop* is performed. Each IP package keeps track of its hop count, preventing bugs in the path from haulting a delivery using the hop limit.
+Each time a package is sent to a different router, a *hop* is performed. Each IP package keeps track of its hop count, preventing bugs in the path from halting a delivery using the hop limit.
 
 ## Ethernet
 https://launchschool.com/lessons/4af196b9/assignments/81df3782
@@ -113,11 +113,13 @@ https://launchschool.com/lessons/4af196b9/assignments/81df3782
 ## MAC Address
 https://launchschool.com/lessons/4af196b9/assignments/81df3782
 
+- Media Access Control address
 - "Since this address is linked to the specific physical device, and (usually) doesn't change, it is sometimes referred to as the physical address or burned-in address. MAC Addresses are formatted as a sequence of six two-digit hexadecimal numbers, e.g. 00:40:96:9d:68:0a, with different ranges of addresses being assigned to different network hardware manufacturers."
 
-## Internet Protocol (IP)
+## Internet Protocol (IP) address
 https://launchschool.com/lessons/4af196b9/assignments/b222ecfb
 
+- "This means that they are not tied to a specific device, but can be assigned as required to devices as they join a network."
 - "The Protocol Data Unit (PDU) within the IP Protocol is referred to as a packet."
 - "Within both models, the primary function of protocols at this layer is to facilitate communication between hosts (e.g. computers) on different networks."
 
@@ -133,3 +135,80 @@ https://launchschool.com/lessons/2a6c7439/assignments/41113e98
 ### Port
 
 - "In simple terms a port is an identifier for a specific process running on a host. This identifier is an integer in the range 0-65535."
+- "Ports are used in the process of multiplexing and demultiplexing."
+- The source and destination port numbers can be seen in the Transport layer PDUs.
+
+### Socket
+
+- Combination of the IP address and port number
+- During implementation, a socket can be instantiated as a socket object.
+- "A socket is a communication end-point."
+- A socket is used to establish connection between applications.
+
+## TCP (Transmission Control Protocol)
+https://launchschool.com/lessons/2a6c7439/assignments/d09ddd52
+
+### Included
+
+- Connection-oriented protocol
+- Multiplexing/Demultiplexing
+- In-order delivery
+- De-duplication
+- Message acknowledgements and retransmission
+- Error detection (checksum)
+
+### Three-way Handshake
+
+A three-way handshake is used within TCP to establish a working connection between two applications.
+
+### Flow Control
+
+- "Flow Control is a mechanism to prevent the sender overwhelming the receiver with more data than it can process. Each participant in a connection lets the other participant know how much data it is willing to accept using a field in the TCP header."
+
+### Congestion Avoidance
+
+- "Congestion avoidance is a process by which TCP uses data loss (based on the volume of retransmissions required) as a feedback mechanism to determine how congested the network is, and adjusts the amount of data being sent accordingly."
+
+## UDP (User Datagram Protocol)
+https://launchschool.com/lessons/2a6c7439/assignments/9bb82c9b
+
+- "The Protocol Data Unit (PDU) of UDP is known as a Datagram."
+- "This simplicity provides two things to a software engineer: speed and flexibility."
+
+### Included:
+
+- Connectionless protocol
+- Multiplexing/Demultiplexing
+- Error detection (checksum)
+
+### What it doesn't do:
+
+- "It provides no guarantee of message delivery"
+- "It provides no guarantee of message delivery order"
+- "It provides no built-in congestion avoidance or flow-control mechanisms"
+- "It provides no connection state tracking, since it is a connectionless protocol"
+
+# HTTP
+
+## The Application Layer
+https://launchschool.com/lessons/cc97deb5/assignments/c604eb60
+
+- "We can perhaps think of Application layer protocols as being the rules for how applications talk to each other at a syntactical level."
+
+## The World Wide Web
+https://launchschool.com/lessons/cc97deb5/assignments/e3d85587
+
+- "The World Wide Web, or web for short, is a service that can be accessed via the internet. In simple terms it is a vast information system comprised of resources which are navigable by means of a URL (Uniform Resource Locator)."
+
+### HTML
+
+- "Hypertext Markup Language (HTML) was the means by which the resources in this system should be uniformly structured."
+
+### URI
+
+- "A Uniform Resource Identifier (URI), is a string of characters which identifies a particular resource."
+
+### HTTP
+- "Hypertext Transfer Protocol (HTTP) is the set of rules which provide uniformity to the way resources on the web are transferred between applications."
+
+
