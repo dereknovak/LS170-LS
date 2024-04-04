@@ -3,22 +3,33 @@
 ## Network
 https://launchschool.com/lessons/4af196b9/assignments/268243e5
 
-"At the most basic level, it's two devices connected in such a way that they can communicate or exchange data."
+- "At the most basic level, it's two devices connected in such a way that they can communicate or exchange data."
 
-## Local Area Network (LAN)
+- A network, in its simplest form, is formed when two devices are connected, allowing communication and data to be exchanged between them.
+
+### Local Area Network (LAN)
 https://launchschool.com/lessons/4af196b9/assignments/268243e5
 
-"...multiple computers and other devices connected via a network bridging device such as a hub or, more likely, a switch. The computers are all connected to this device via network cables, and this forms the network."
+- "...multiple computers and other devices connected via a network bridging device such as a hub or, more likely, a switch. The computers are all connected to this device via network cables, and this forms the network."
+
+- A Local Area Network (LAN) is established between multiple devices that have a tangibly physical source connecting them, typically within a close proximity. These devices are connected by networks cables that are grouped together using hubs, bridges, or switches.
+
+### Wireless Local Area Network (WLAN)
+
+- Similarly to a LAN, a Wireless Local Area Network is established between mutliple nearby devices; however, these devices are instead connected through radio waves, creating a wireless connection between devices. While WLAN allows for greater device transportability, it comes at the cost of slower latency and smaller bandwidth.
 
 ## Router
 
-"Routers are network devices that can route network traffic to other networks. Within a Local Area Network, they effectively act as gateways into and out of the network."'
+- "Routers are network devices that can route network traffic to other networks. Within a Local Area Network, they effectively act as gateways into and out of the network."
+
+- Networks are linked together by the implementation of **routers**, which route data enchange from network to network.
 
 ## Protocol
 
-"In simple terms, we can think of a protocol as a *system of rules*."
+- "In simple terms, we can think of a protocol as a *system of rules*."
+- "In terms of computer networks, we can be a bit more specific: A set of rules that govern the exchange or transmission of data."
 
-"In terms of computer networks, we can be a bit more specific: A set of rules that govern the exchange or transmission of data."
+- A *protocol* is a system of rules that two hosts follow to allow for successful data exchange between them. Without these agreed-upon rules, information between the hosts would become chaotic and likely misunderstood and unprotected.
 
 Why so many protocols?
 
@@ -32,16 +43,29 @@ Wikipedia: https://en.wikipedia.org/wiki/OSI_model
 
 - Layer 7: Application
 - Layer 6: Presentation
-- Layer 5: Session
-- Layer 4: Transport
-- Layer 3: Network
-- Layer 2: Data Link
-- Layer 1: Physical
+- Layer 5: Session   
+- Layer 4: Transport (Service to Service)
+- Layer 3: Network (End to End)
+- Layer 2: Data Link (Hop to Hop)
+- Layer 1: Physical (Transporting Bits)
+
+### TCP/IP Model
+
+- Layer 4: Application (5-7)
+- Layer 3: Transport (4)
+- Layer 2: Network (3)
+- Layer 1: Network Interface (1-2)
 
 ## Protocol Data Units (PDU)
 https://launchschool.com/lessons/4af196b9/assignments/21ef33af
 
 "...a Protocol Data Unit (PDU) is an amount or block of data transferred over a network. Different protocols or protocol layers refer to PDUs by different names. At the Link/ Data Link layer, for example, a PDU is known as a frame. At the Internet/ Network layer it is known as a packet. At the Transport layer, it is known as a segment (TCP) or datagram (UDP)."
+
+Specific Layer PDUs:
+
+- Transfer - *segments*
+- Network - *packets*
+- Data Link - *frames* (Ethernet frames)
 
 ### Encapsulation of Data
 
@@ -66,7 +90,9 @@ Khan Academy
 
 ### Bandwidth
 
-"Bandwidth is the amount of data that can be sent in a particular unit of time (typically, a second)."
+- "Bandwidth is the amount of data that can be sent in a particular unit of time (typically, a second)."
+
+- **Bandwidth** refers to the total data that can be transferred from one device to another within a specific timeframe.
 
 ### Bit Rate
 
@@ -75,6 +101,8 @@ Khan Academy
 ### Latency
 
 "...latency is a measure of the time it takes for some data to get from one point in a network to another point in a network."
+
+- **Latency** is the measure of time that it takes for data to move from one host to another.
 
 ## Methods of Transportation
 
