@@ -63,7 +63,7 @@ https://launchschool.com/lessons/4af196b9/assignments/21ef33af
 
 Specific Layer PDUs:
 
-- Transfer - *segments*
+- Transfer - *segments* (TCP) *datagrams* (UDP)
 - Network - *packets*
 - Data Link - *frames* (Ethernet frames)
 
@@ -102,7 +102,7 @@ Khan Academy
 
 "...latency is a measure of the time it takes for some data to get from one point in a network to another point in a network."
 
-- **Latency** is the measure of time that it takes for data to move from one host to another.
+- **Latency** is the measure of time that it takes for data to move from one part of a network to another.
 
 ## Methods of Transportation
 
@@ -277,6 +277,8 @@ https://launchschool.com/lessons/74f1325b/assignments/a88271cf
 ### Message Authentication Code (MAC)
 
 - "The intention of the MAC field in a TLS record is to add a layer of security by providing a means of checking that the message hasn't been altered or tampered with in transit."
+
+- The Message Authentication Code (MAC) is used as part of the TLS record to check whether the data has been altered while in transit.
 
 
 
