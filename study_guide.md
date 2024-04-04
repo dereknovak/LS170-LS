@@ -30,13 +30,13 @@ Why so many protocols?
 Wikipedia: https://en.wikipedia.org/wiki/OSI_model
 - "The Open Systems Interconnection model (OSI model) is a reference model from the International Organization for Standardization (ISO) that "provides a common basis for the coordination of standards development for the purpose of systems interconnection."
 
-- Layer 1: Application
-- Layer 2: Presentation
-- Layer 3: Session
+- Layer 7: Application
+- Layer 6: Presentation
+- Layer 5: Session
 - Layer 4: Transport
-- Layer 5: Network
-- Layer 6: Data Link
-- Layer 7: Physical
+- Layer 3: Network
+- Layer 2: Data Link
+- Layer 1: Physical
 
 ## Protocol Data Units (PDU)
 https://launchschool.com/lessons/4af196b9/assignments/21ef33af
@@ -148,6 +148,8 @@ https://launchschool.com/lessons/2a6c7439/assignments/41113e98
 ## TCP (Transmission Control Protocol)
 https://launchschool.com/lessons/2a6c7439/assignments/d09ddd52
 
+- The Transmission Control Protocol (TCP) allows for reliable transfer between the client and server, implementing a three-way handshake design to ensure all packets of information make it from one to the other.
+
 ### Included
 
 - Connection-oriented protocol
@@ -159,7 +161,7 @@ https://launchschool.com/lessons/2a6c7439/assignments/d09ddd52
 
 ### Three-way Handshake
 
-A three-way handshake is used within TCP to establish a working connection between two applications.
+- A three-way handshake is used within TCP to establish a working connection between two applications.
 
 ### Flow Control
 
@@ -171,6 +173,8 @@ A three-way handshake is used within TCP to establish a working connection betwe
 
 ## UDP (User Datagram Protocol)
 https://launchschool.com/lessons/2a6c7439/assignments/9bb82c9b
+
+The User Datagram Protocol (UDP) provides data transfer both speed and flexibility at the cost of reliability.
 
 - "The Protocol Data Unit (PDU) of UDP is known as a Datagram."
 - "This simplicity provides two things to a software engineer: speed and flexibility."
@@ -210,5 +214,41 @@ https://launchschool.com/lessons/cc97deb5/assignments/e3d85587
 
 ### HTTP
 - "Hypertext Transfer Protocol (HTTP) is the set of rules which provide uniformity to the way resources on the web are transferred between applications."
+
+# Transport Layer Security (TLS)
+
+## Encryption
+https://launchschool.com/lessons/74f1325b/assignments/54f6defc
+
+- "...a process of encoding a message so that it can only be read by those with an authorized means of decoding the message."
+
+### TLS Handshake
+
+TLS Process is used to:
+
+- "Agree which version of TLS to be used in establishing a secure connection."
+- "Agree on the various algorithms that will be included in the cipher suite."
+- "Enable the exchange of symmetric keys that will be used for message encryption."
+
+## Authentication
+https://launchschool.com/lessons/74f1325b/assignments/95e698ab
+
+- "...a process to verify the identity of a particular party in the message exchange."
+
+### Certificate Authority (CA)
+
+- "If you are presented with a piece of identification, you are much more likely to accept it as genuine if it has been issued by a trustworthy source. When it comes to digital certificates, the trustworthy sources are called Certificate Authorities (CAs)."
+
+## Integrity
+https://launchschool.com/lessons/74f1325b/assignments/a88271cf
+
+- "...a process to detect whether a message has been interfered with or faked."
+
+### TLS Encapsulation
+
+### Message Authentication Code (MAC)
+
+- "The intention of the MAC field in a TLS record is to add a layer of security by providing a means of checking that the message hasn't been altered or tampered with in transit."
+
 
 
