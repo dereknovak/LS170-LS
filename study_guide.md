@@ -241,6 +241,8 @@ The User Datagram Protocol (UDP) provides data transfer both speed and flexibili
 
 # HTTP
 
+- HTTP is a text-based request response protocol that allows the transfer of hypertext documents between two applications. This is accomplished through requests, which can retrieve, add, or change various documents by means of HTTP methods, and the subsequent response, which provides information about the documents and status code of the request.
+
 ## The Application Layer
 https://launchschool.com/lessons/cc97deb5/assignments/c604eb60
 
@@ -298,6 +300,11 @@ https://launchschool.com/lessons/74f1325b/assignments/a88271cf
 - "The intention of the MAC field in a TLS record is to add a layer of security by providing a means of checking that the message hasn't been altered or tampered with in transit."
 
 - The Message Authentication Code (MAC) is used as part of the TLS record to check whether the data has been altered while in transit.
+
+# Great resources
+
+1. HTTP Fundamentals (Great defintions of HTTP/protocol)
+- https://www.youtube.com/watch?v=qv5-5hhsKpE
 
 
 
