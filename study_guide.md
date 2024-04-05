@@ -29,12 +29,17 @@ https://launchschool.com/lessons/4af196b9/assignments/268243e5
 - "In simple terms, we can think of a protocol as a *system of rules*."
 - "In terms of computer networks, we can be a bit more specific: A set of rules that govern the exchange or transmission of data."
 
-- A *protocol* is a system of rules that two hosts follow to allow for successful data exchange between them. Without these agreed-upon rules, information between the hosts would become chaotic and likely misunderstood and unprotected.
+- A *protocol* is a system of rules that two hosts follow to allow for successful data exchange or transmission. Without these agreed-upon rules, information between the hosts would become chaotic and likely misunderstood and unprotected.
 
 Why so many protocols?
 
 1. "Different protocols were developed to address different aspects of network communication."
 2. "Different protocols were developed to address the same aspect of network communication but differently for a specific use case."
+
+## Network Models
+https://launchschool.com/lessons/4af196b9/assignments/21ef33af
+
+- "Although there is utility in both of these approaches, no single model will perfectly fit a real-world implementation."
 
 ### OSI Model
 
@@ -49,7 +54,7 @@ Wikipedia: https://en.wikipedia.org/wiki/OSI_model
 - Layer 2: Data Link (Hop to Hop)
 - Layer 1: Physical (Transporting Bits)
 
-### TCP/IP Model
+### Internet Protocol Suite (TCP/IP) Model
 
 - Layer 4: Application (5-7)
 - Layer 3: Transport (4)
@@ -69,6 +74,8 @@ Specific Layer PDUs:
 
 ### Encapsulation of Data
 
+- The entire PDU for a specific layer of the OSI model--header, data payload, trailer--is encapsulated as the data payload for the layer below it. For example, the TCP segment of a data exchange is encapsulated within the data payload of the IP packet, which is then encapsulated as the data payload of the ethernet frame. This allows each layer to operate independently, disregarding any information from other layers and providing a 'service' to the upward layer.
+
 Quiz Answers:
 
 - "Encapsulation is implemented through the use of Protocol Data Units (PDUs)."
@@ -79,7 +86,9 @@ Quiz Answers:
 
 "The exact structure of the header and, if included, trailer varies from protocol to protocol, but the purpose of them is the same in each case: to provide protocol-specific metadata about the PDU."
 
-# Wires, Cables, and WiFi (Khan Academy)
+## The Physical Layer
+
+### Wires, Cables, and WiFi (Khan Academy)
 https://www.khanacademy.org/computing/code-org/computers-and-the-internet/internet-works/v/the-internet-wires-cables-and-wifi
 
 ### Bit
@@ -100,25 +109,35 @@ Khan Academy
 
 ### Latency
 
-"...latency is a measure of the time it takes for some data to get from one point in a network to another point in a network."
+- "...latency is a measure of the time it takes for some data to get from one point in a network to another point in a network."
+- "We can think of latency as a measure of delay."
 
 - **Latency** is the measure of time that it takes for data to move from one part of a network to another.
 
-## Methods of Transportation
+Different types of delay:
+- Propagation delay
+- Transmission delay
+- Processing delay
+- Queing delay
+- Last-mile latency
+- Round-trip Time (RTT)
 
-### Electricity (Copper wires)
+### Methods of Transportation
+
+1. Electricity (Copper wires)
 
 - Cheap
 - Signal loss
 
-### Fiber Optic Cable
+2. Fiber Optic Cable
 
 "A thread of glass engineered to reflect light."
 - Really fast
 - No signal loss
 - Expensive
 
-### Radio Waves
+3. Radio Waves
+
 "Uses radio signal to send bits from one place to another."
 - Translates 1's and 0's from binary to radio waves and back.
 - Totally mobile
