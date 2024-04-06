@@ -214,9 +214,13 @@ https://launchschool.com/lessons/2a6c7439/assignments/d09ddd52
 
 - "Flow Control is a mechanism to prevent the sender overwhelming the receiver with more data than it can process. Each participant in a connection lets the other participant know how much data it is willing to accept using a field in the TCP header."
 
+- To prevent overwhelming the receiver with too much data from the sender, a TCP segment implements **flow control**. By establishing each network's *window size*, the segment can dynamically control how much data is being sent at one time to prevent clutter which could result in dropped data.
+
 ### Congestion Avoidance
 
 - "Congestion avoidance is a process by which TCP uses data loss (based on the volume of retransmissions required) as a feedback mechanism to determine how congested the network is, and adjusts the amount of data being sent accordingly."
+
+- To prevent overwhelming the network with too much data from the sender, a TCP segment implements **congestion avoidance**. By analyzing areas of consistent network congestion, and therefore dropped packets, the segment will reduce the size of its *transmission window*, limiting the total unacknowledged segments that the sender can have at a given time.
 
 ## UDP (User Datagram Protocol)
 https://launchschool.com/lessons/2a6c7439/assignments/9bb82c9b
