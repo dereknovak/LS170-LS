@@ -1,4 +1,31 @@
+# Navigation
+
+- [The Internet](#the-internet)
+    - [Network](#network)
+    - [Models](#network-models)
+    - [Protocol Data Units](#protocol-data-units-pdu)
+    - [Physical Layer](#the-physical-layer)
+    - [Data Link Layer](#ethernet)
+    - [Network Layer](#the-network-layer)
+- [Transport Layer](#the-transport-layer)
+    - [Communication](#communication-between-processes)
+    - [TCP](#tcp-transmission-control-protocol)
+    - [UDP](#udp-user-datagram-protocol)
+- [HTTP](#http)
+    - [Application Layer](#the-application-layer)
+    - [World Wide Web](#the-world-wide-web)
+    - [URL Parts](#url-parts)
+    - [Query String Parts](#query-string-parts)
+    - [Requests](#requests)
+- [Tranport Layer Security](#transport-layer-security-tls)
+    - [Encryption](#encryption)
+    - [Authentication](#authentication)
+    - [Integrity](#integrity)
+- [Great Resources](#great-resources)
+
 # The Internet
+
+- The *Internet* is a network of networks.
 
 ## Network
 https://launchschool.com/lessons/4af196b9/assignments/268243e5
@@ -18,13 +45,13 @@ https://launchschool.com/lessons/4af196b9/assignments/268243e5
 
 - Similarly to a LAN, a Wireless Local Area Network is established between mutliple nearby devices; however, these devices are instead connected through radio waves, creating a wireless connection between devices. While WLAN allows for greater device transportability, it comes at the cost of slower latency and smaller bandwidth.
 
-## Router
+### Router
 
 - "Routers are network devices that can route network traffic to other networks. Within a Local Area Network, they effectively act as gateways into and out of the network."
 
 - Networks are linked together by the implementation of **routers**, which route data enchange from network to network.
 
-## Protocol
+### Protocol
 
 - "In simple terms, we can think of a protocol as a *system of rules*."
 - "In terms of computer networks, we can be a bit more specific: A set of rules that govern the exchange or transmission of data."
@@ -163,7 +190,9 @@ https://launchschool.com/lessons/4af196b9/assignments/81df3782
 - Media Access Control address
 - "Since this address is linked to the specific physical device, and (usually) doesn't change, it is sometimes referred to as the physical address or burned-in address. MAC Addresses are formatted as a sequence of six two-digit hexadecimal numbers, e.g. 00:40:96:9d:68:0a, with different ranges of addresses being assigned to different network hardware manufacturers."
 
-## Internet Protocol (IP) address
+## The Network Layer
+
+### Internet Protocol (IP) address
 https://launchschool.com/lessons/4af196b9/assignments/b222ecfb
 
 - "This means that they are not tied to a specific device, but can be assigned as required to devices as they join a network."
@@ -244,8 +273,11 @@ The User Datagram Protocol (UDP) provides data transfer both speed and flexibili
 - "It provides no connection state tracking, since it is a connectionless protocol"
 
 # HTTP
+https://launchschool.com/books/http/read/background
 
-- HTTP is a text-based request response protocol that allows the transfer of hypertext documents between two applications. This is accomplished through requests, which can retrieve, add, or change various documents by means of HTTP methods, and the subsequent response, which provides information about the documents and status code of the request.
+- "Hypertext Transfer Protocol (HTTP) is the set of rules which provide uniformity to the way resources on the web are transferred between applications."
+
+- HTTP is a text-based request response protocol that allows the transfer of hypertext documents between two web applications. This is accomplished through requests, which can retrieve, add, or change various documents by means of HTTP methods, and the subsequent response, which provides information about the documents and status code of the request.
 
 ## The Application Layer
 https://launchschool.com/lessons/cc97deb5/assignments/c604eb60
@@ -255,7 +287,7 @@ https://launchschool.com/lessons/cc97deb5/assignments/c604eb60
 ## The World Wide Web
 https://launchschool.com/lessons/cc97deb5/assignments/e3d85587
 
-- "The World Wide Web, or web for short, is a service that can be accessed via the internet. In simple terms it is a vast information system comprised of resources which are navigable by means of a URL (Uniform Resource Locator)."
+- "The World Wide Web, or web for short, is a **service** that can be accessed via the internet. In simple terms it is a vast information system comprised of resources which are navigable by means of a URL (Uniform Resource Locator)."
 
 ### HTML
 
@@ -265,8 +297,73 @@ https://launchschool.com/lessons/cc97deb5/assignments/e3d85587
 
 - "A Uniform Resource Identifier (URI), is a string of characters which identifies a particular resource."
 
-### HTTP
-- "Hypertext Transfer Protocol (HTTP) is the set of rules which provide uniformity to the way resources on the web are transferred between applications."
+### Difference between a URI and URL
+
+- A URI is a string of characters that identifies a specific resourse and can include either its name, protocol, or both. A URL is a type of URI that includes *both* the name and protocol. While its technically correct to call a string of characters with both present a URI, it's *more correct* to refer to it as a URL, as its a more specific distinction.
+
+URI => Identifier
+URN => Name/Number
+URL => Name/Number + Protocol
+
+### Resource
+
+- ""Resource" is a generic term for things you interact with on the Internet via a URL. This includes images, videos, web pages and other files.
+
+## URL Parts
+
+https://www.google.com:80/search?q=toys#small
+
+### Scheme
+
+`https`
+
+- The **scheme** instructs the web client on how to access the resource. While there is a connection between the scheme and a protocol, they are *not* the same thing; the scheme simply indicates which protocol is being used.
+
+### Host
+
+`www.google.com`
+
+- The **host** instructs the web client on where the resource is hosted.
+
+### Port Number
+
+`:80`
+
+- The **port number** dictates which specific port is used. If none are indicated, then the port defaults to `80` for HTTP and `443` for HTTPS.
+
+### Path
+
+`/search`
+
+- The **path** dictates which local resource is being requested within the host.
+
+### Query String
+
+`?q=toys`
+
+- The **query string**, which is made up of one or more *query parameters* are used to send additional data to the server upon request.
+
+### Fragment
+
+`#small`
+
+- The **fragment** is an internal page reference.
+
+## Query String Parts
+
+`http://www.phoneshop.com?product=iphone&size=32gb&color=white`
+
+Query String => `?product=iphone&size=32gb&color=white`
+
+### Parameters
+
+`product=iphone` / `size=32gb` / `color=white`
+
+- A parameter is notated by its *name* and *value*.
+- Each parameter is separated by `&`.
+- Because certain special characters cannot be used in the query string, a UTF-8 code will be used to represent them. A space, for example, uses `%20`, such as `launch%20school`.
+
+## Requests
 
 # Transport Layer Security (TLS)
 
@@ -305,7 +402,7 @@ https://launchschool.com/lessons/74f1325b/assignments/a88271cf
 
 - The Message Authentication Code (MAC) is used as part of the TLS record to check whether the data has been altered while in transit.
 
-# Great resources
+# Great Resources
 
 1. HTTP Fundamentals (Great defintions of HTTP/protocol)
 - https://www.youtube.com/watch?v=qv5-5hhsKpE
