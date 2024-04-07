@@ -20,6 +20,7 @@
     - [Responses](#responses)
     - [Headers](#headers)
     - [Stateful Web Applications](#stateful-web-applications)
+    - [Security](#security)
 - [Tranport Layer Security](#transport-layer-security-tls)
     - [Encryption](#encryption)
     - [Authentication](#authentication)
@@ -180,7 +181,7 @@ Different types of delay:
 
 ### Hop
 
-- A **ho**p is the movement from one device to another. Each IP package keeps track of its hop count, preventing bugs in the path from halting a delivery using the hop limit.
+- A **hop** is the movement from one device to another. Each IP package keeps track of its hop count, preventing bugs in the path from halting a delivery using the hop limit.
 
 ## Ethernet
 https://launchschool.com/lessons/4af196b9/assignments/81df3782
@@ -475,6 +476,47 @@ Typical status codes:
 https://launchschool.com/books/http/read/statefulness
 
 - HTTP is a *stateless* protocol in that it does not save state in any part of its implementation, causing each request and response by applications to act independently from any other. This provides resilience to the HTTP protocol, as no maintenance is required throughout usage; however, lack of state creates a challenging experience for building stateful applications as programmers must find alternative methods of storing information.
+
+### Sessions
+
+- A web browser may receive a **session identifier** (token) as part of their request that allows each requent to include the appended token, creating a sense of statefulness to the session. It's important to note that, although state seems to exist through the implementation of the token, each request is still independent from others.
+
+### Cookies
+
+- "Cookies or HTTP cookies, are small files stored in the browser and contain the session information."
+
+- **Cookies** are files that are stored on a web browser that contain specific session information, allowing these files to be included in each HTTP request and thus immitating a stateful environment.
+
+### Asynchronous JavaScript and XML (AJAX)
+
+-"Its main feature is that it allows browsers to issue requests and process responses without a full page refresh."
+
+- Used to request data and process its response without reloading the current web page.
+
+## Security
+https://launchschool.com/books/http/read/security
+
+### HTTPS
+
+- Hypertext Transfer Protocol Secure (HTTPS) is an extension of the HTTP protocol that adds additional security by encrypting data between every exchange, providing only the client and server the key to decrypt it. This is accomplished through the use of certificates to exchange security keys with the two parties before encryption begins.
+
+### Same-Origin Policy
+
+- "The same-origin policy permits unrestricted interaction between resources originating from the same origin, but restricts certain interactions between resources originating from different origins."
+
+- The **same-origin policy** restricts specific interactions between foreign resources, referring to those that originate from a different scheme or host. While more secure, this restriction can make it challenging for developer who require cross-origin requests. To combat this, Cross-origin resource sharing (**CORS**) was developed to permit these cross-origin interactions by implementing a new set of HTTP headers.
+
+### Session Hijacking
+
+- "Unfortunately, if an attacker gets a hold of the session id, both the attacker and the user now share the same session and both can access the web application. In session hijacking, the user won't even know an attacker is accessing his or her session without ever even knowing the username or password."
+
+- If a hijacker gets a hold of a client's session ID token, they will have full access to their session without the need of a correct username or password. Developers can implement methods of preventing full access from this token by frequently resetting sessions, setting expiration times on sessions, or by implementing HTTPS to encypt all data, including the session ID.
+
+### Cross-Site Scripting (XSS)
+
+- "This type of attack happens when you allow users to input HTML or JavaScript that ends up being displayed by the site directly."
+
+- When given the ability to add additional content to a site, such as comment blocks, users can input explicit HTML or JavaScript code which may alter the host in an unintended way. To prevent such a breach, developers are encouraged to sanitize any input from users, eliminating specific problematic input, or *escaping* the input when displaying it to the console.
 
 # Transport Layer Security (TLS)
 
