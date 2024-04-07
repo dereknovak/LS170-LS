@@ -17,6 +17,9 @@
     - [URL Parts](#url-parts)
     - [Query String Parts](#query-string-parts)
     - [Requests](#requests)
+    - [Responses](#responses)
+    - [Headers](#headers)
+    - [Stateful Web Applications](#stateful-web-applications)
 - [Tranport Layer Security](#transport-layer-security-tls)
     - [Encryption](#encryption)
     - [Authentication](#authentication)
@@ -71,6 +74,7 @@ https://launchschool.com/lessons/4af196b9/assignments/21ef33af
 ### OSI Model
 
 Wikipedia: https://en.wikipedia.org/wiki/OSI_model
+
 - "The Open Systems Interconnection model (OSI model) is a reference model from the International Organization for Standardization (ISO) that "provides a common basis for the coordination of standards development for the purpose of systems interconnection."
 
 - Layer 7: Application
@@ -172,11 +176,11 @@ Different types of delay:
 
 ### Fault Tolerant
 
-Because a package can take a variety of routes from one IP address to another, the system is fault tolerant, as a distruption in one path can be avoiding by following another path.
+- Because a package can take a variety of routes from one IP address to another, the system is fault tolerant, as a distruption in one path can be avoiding by following another path.
 
 ### Hop
 
-Each time a package is sent to a different router, a *hop* is performed. Each IP package keeps track of its hop count, preventing bugs in the path from halting a delivery using the hop limit.
+- A **ho**p is the movement from one device to another. Each IP package keeps track of its hop count, preventing bugs in the path from halting a delivery using the hop limit.
 
 ## Ethernet
 https://launchschool.com/lessons/4af196b9/assignments/81df3782
@@ -199,6 +203,8 @@ https://launchschool.com/lessons/4af196b9/assignments/b222ecfb
 - "The Protocol Data Unit (PDU) within the IP Protocol is referred to as a packet."
 - "Within both models, the primary function of protocols at this layer is to facilitate communication between hosts (e.g. computers) on different networks."
 
+- An Internet Protocol (IP) address is a 32-bit identifier, broken into a series of 4 integers, that represent a specific device or application within a network.
+
 # The Transport Layer
 
 ## Communication Between Processes
@@ -212,6 +218,8 @@ https://launchschool.com/lessons/2a6c7439/assignments/41113e98
 
 - "In simple terms a port is an identifier for a specific process running on a host. This identifier is an integer in the range 0-65535."
 - "Ports are used in the process of multiplexing and demultiplexing."
+
+- A **port number** is an integer identifier between 0-65535 that reference a specific application or process existing within a host.
 - The source and destination port numbers can be seen in the Transport layer PDUs.
 
 ### Socket
@@ -301,17 +309,25 @@ https://launchschool.com/lessons/cc97deb5/assignments/e3d85587
 
 - A URI is a string of characters that identifies a specific resourse and can include either its name, protocol, or both. A URL is a type of URI that includes *both* the name and protocol. While its technically correct to call a string of characters with both present a URI, it's *more correct* to refer to it as a URL, as its a more specific distinction.
 
-URI => Identifier
-URN => Name/Number
-URL => Name/Number + Protocol
+- URI => Identifier
+- URN => Name/Number
+- URL => Name/Number + Protocol
 
 ### Resource
 
 - ""Resource" is a generic term for things you interact with on the Internet via a URL. This includes images, videos, web pages and other files.
 
+### Web Browser
+
+- The client that is typically used by the user to request data throughout the internet is the **web browser**.
+
+### Domain Name System
+
+- The **Domain Name System (DNS)** is a distributed database of addresses that reference specific IP addresses throughout the internet, using more readable names such as `www.google.com` to identify its respective IP address.
+
 ## URL Parts
 
-https://www.google.com:80/search?q=toys#small
+`https://www.google.com:80/search?q=toys#small`
 
 ### Scheme
 
@@ -364,6 +380,101 @@ Query String => `?product=iphone&size=32gb&color=white`
 - Because certain special characters cannot be used in the query string, a UTF-8 code will be used to represent them. A space, for example, uses `%20`, such as `launch%20school`.
 
 ## Requests
+https://launchschool.com/books/http/read/making_requests
+
+- Every time that you enter a URL or click on a resource, your web browser (client) is making a request to its respective server.
+
+### HTTP Tool
+
+- An HTTP tool can be used to *inspect* the raw response received from a server at the client's request. Specific tools, such as the **inspector**, will organize the raw data into more readable information, showcasing data such as the raw file data, its, type and size, the request method, status code, and much more.
+
+### Methods
+
+- "You can think of this as the verb that tells the server what action to perform on a resource."
+
+- An HTTP request method indicates what kind of request is being called, with the two most common being `GET` which retrieves data and `POST` which adds data.
+
+### GET
+
+Primary concepts:
+
+- "GET requests are used to retrieve a resource, and most links are GETs."
+- "The response from a GET request can be anything, but if it's HTML and that HTML references other resources, your browser will automatically request those referenced resources. A pure HTTP tool will not."
+
+### POST
+
+- "POST requests allow us to send much larger and sensitive data to the server, such as images or videos."
+- "POST requests also help sidestep the query string size limitation that you have with GET requests."
+
+### Body
+
+- "The body contains the data that is being transmitted in an HTTP message and is optional."
+
+## Responses
+
+- The raw data that is returned by a server from a request is the **response**.
+
+### Status Code
+
+- The **status code** is a three-digit number included in the HTTP response that references the status of the given request.
+
+Ranges:
+
+- 1xx = Informational
+- 2xx = Successful
+- 3xx = Redirection
+- 4xx = Client Error
+- 5xx = Server Error
+
+Typical status codes:
+
+- 200 = OK
+- 302 = Found (but in a different spot)
+- 404 = Not Found
+- 500 = Internal Server Error
+
+## Headers
+
+### Request Headers
+
+1. Host
+- Domain name of server
+- `Host:www.reddit.com`
+
+2. Accept-Language
+- Acceptable languages that can be used
+- `Accept-Language: en-US, en;q=0.8`
+
+3. User-Agent
+- A string that IDs the client
+- `User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.101 Safari/537.36`
+
+4. Connection
+- Type of connection client prefers
+- `Connection: keep-alive`
+
+### Response Headers
+
+1. Content-Encoding
+- Type of data encoding
+- `Content-Encoding: gzip`
+
+2. Server
+- Name of server
+- `Server: thin 1.5.0 codename Knife`
+
+3. Location
+- New resource location
+- `Location: https://www.github.com/login`
+
+4. Content-Type
+- Type of data
+- `Content-Type:text/html; charset=UTF-8`
+
+## Stateful Web Applications
+https://launchschool.com/books/http/read/statefulness
+
+- HTTP is a *stateless* protocol in that it does not save state in any part of its implementation, causing each request and response by applications to act independently from any other. This provides resilience to the HTTP protocol, as no maintenance is required throughout usage; however, lack of state creates a challenging experience for building stateful applications as programmers must find alternative methods of storing information.
 
 # Transport Layer Security (TLS)
 
