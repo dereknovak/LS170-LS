@@ -123,23 +123,57 @@
 - 
 ## 59. **What is network congestion?**
 - Know the difference between network congestion and congestion avoidance
+
 ## 60. **How do transport layer protocols enable communication between processes?**
-## 61. **Compare UDP and TCP. What are similarities, what are differences? What are pros and cons of using each one?** 
-## 62. **What does it mean that network reliability is ## engineered?**
+- The transport layer protocols enable communication by holding information about the source and destination **port numbers** within its header. These identifiers are used to locate a specific application within a device, and are typically appended on the device's IP address in the form of a *socket*.
+
+## 61. **Compare UDP and TCP. What are similarities, what are differences? What are pros and cons of using each one?**
+- The Transport Layer Protocol (TCP) and User Datagram Protocol (UDP) are protocols that are used in the Trasport Layer of the OSI model. They exist as a means to trasport either TCP segments or UDP datagrams between two applications. TCP is a connection-oriented protocol and is focused primarily on reliablility, implementing in-order delivery, de-duplication, and message acknowledgements and retransmission to ensure that all data arrives in tact. While reliable, this also slows down the TCP transaction.
+- UDP, on the otherhand, is a connectionless protocol. This means that a connection does not need to be established before commencing communication, nor do any of the previously mentioned checks take place. While less reliable, a UDP datagram makes up for it in speed and flexibility, as it does not have to worry about the extra checks. Although UDP does not come stock with any of the reliability perks, many developers will add extra functionality to the protocol to make it more reliable.
+
+## 62. **What does it mean that network reliability is engineered?**
+- Networks are inherently unreliable, meaning that data can be sent across a network and there is no guarantee that the information will not be lost. Obviously, this would not bode well for communication, so reliability is engineered into the process to ensure all data is transferred successfully. Many examples of reliability engineering exist in TCP, which adds in-order delivery (packets are sorted in appropriate order), de-duplication (repeated packets are deleted), and message acknowledgements and retransmission (dropped packets are resent).
+
 ## 63. **Give an overview of the Application Layer.** 
+- The Application layer's job in regards to the OSI model is allow applications to share information at a syntactical level. Certain applications, such as e-mail clients or web browser, require different kinds of communcation, which is where the Application layer protocols come to shine.
+
 ## 64. **What is HTML?**
+- The Hypertext Markup Language (HTML) is a structured file that can include headings, paragraphs, lists, and most importantly links, which is where *hypertext* is derived.
+
 ## 65. **What is a URL and what components does it have?**
+- A URL is a type of URI that includes *both* the name and protocol. While its technically correct to call a string of characters with both present a URI, it's *more correct* to refer to it as a URL, as its a more specific distinction.
+- A URL must consist of a scheme and a host. They can also include a port number (no port number uses a default), a path, a query string, and a fragment.
+
 ## 66. **What is a Query string? What it is used for?**
+- The **query string**, which is made up of one or more *query parameters* are used to send additional data to the server upon request.
+
 ## 67. **What URL encoding is and when it might be used for?**
-## 68. **Which characters have to be encoded in the URL? ## Why?**
+
+
+## 68. **Which characters have to be encoded in the URL? Why?**
+
 ## 69. **What is www in the URL?** 
+- WWW refers to the World Wide Web, which is a service used to request information throughout the internet. This is mostly a naming convention that is used to identify a web address and serves no technical purpose.
+
 ## 70. **What is URI?**
+- A URI is a string of characters that identifies a specific resourse and can include either its name, protocol, or both.
+
 ## 71. **What is the difference between scheme and protocol ## in URL?**
+- A URI is a string of characters that identifies a specific resourse and can include either its name, protocol, or both. A URL is a type of URI that includes *both* the name and protocol. While its technically correct to call a string of characters with both present a URI, it's *more correct* to refer to it as a URL, as its a more specific distinction.
+
 ## 72. **What is HTTP?**
+- HTTP is a text-based request response protocol that allows the transfer of hypertext documents between two web applications. This is accomplished through requests, which can retrieve, add, or change various documents by means of HTTP methods, and the subsequent response, which provides information about the documents and status code of the request.
+
 ## 73. **What is the role of HTTP?**
-## 74. **Explain the client-server model of web ## interactions, and the role of HTTP as a protocol within ## that model**
-## 75. **What are HTTP requests and responses? What are the ## components of each?**
+
+## 74. **Explain the client-server model of web interactions, and the role of HTTP as a protocol within that model**
+- When an application (client) makes a request to another application (server), an exchange of data is made. This is accomplished through requests, which can retrieve, add, or change various documents by means of HTTP methods, and the subsequent resposne, which provides information about the documents and status code of the request.
+
+## 75. **What are HTTP requests and responses? What are the components of each?**
+- Any time that you enter a URL or click on a resource, your web browser (client) is making a request to its respective server. Each request will contain a header that indicates the name of the server, acceptable languages that can be used, the client's ID, the type of connection preferred, and more. Upon each request, a response is provided by the server. Similarly, a header is used to provide information, including the type of data encoding, the name of the server, the location of the resource, the type of data, and more. Each request will also include the type of request method used (GET, POST) as well as a status code to indicate the status of the request.
+
 ## 76. **Describe the HTTP request/response cycle.**
+
 ## 77. **What is a state in the context of the 'web'?**
 ## 78. **What is statelessness?**
 ## 79. **What is a stateful Web Application?**

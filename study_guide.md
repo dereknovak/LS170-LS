@@ -302,9 +302,15 @@ https://launchschool.com/lessons/cc97deb5/assignments/e3d85587
 
 - "Hypertext Markup Language (HTML) was the means by which the resources in this system should be uniformly structured."
 
+### URL
+
+- A URL is a type of URI that includes *both* the name and protocol. While its technically correct to call a string of characters with both present a URI, it's *more correct* to refer to it as a URL, as its a more specific distinction.
+
 ### URI
 
 - "A Uniform Resource Identifier (URI), is a string of characters which identifies a particular resource."
+
+- A URI is a string of characters that identifies a specific resourse and can include either its name, protocol, or both.
 
 ### Difference between a URI and URL
 
@@ -383,7 +389,7 @@ Query String => `?product=iphone&size=32gb&color=white`
 ## Requests
 https://launchschool.com/books/http/read/making_requests
 
-- Every time that you enter a URL or click on a resource, your web browser (client) is making a request to its respective server.
+- Any time that you enter a URL or click on a resource, your web browser (client) is making a request to its respective server.
 
 ### HTTP Tool
 
@@ -504,7 +510,7 @@ https://launchschool.com/books/http/read/security
 
 - "The same-origin policy permits unrestricted interaction between resources originating from the same origin, but restricts certain interactions between resources originating from different origins."
 
-- The **same-origin policy** restricts specific interactions between foreign resources, referring to those that originate from a different scheme or host. While more secure, this restriction can make it challenging for developer who require cross-origin requests. To combat this, Cross-origin resource sharing (**CORS**) was developed to permit these cross-origin interactions by implementing a new set of HTTP headers.
+- The **same-origin policy** restricts specific interactions between foreign resources, referring to those that originate from a different scheme or host. While more secure, this restriction can make it challenging for developers who require cross-origin requests. To combat this, Cross-origin resource sharing (**CORS**) was developed to permit these cross-origin interactions by implementing a new set of HTTP headers.
 
 ### Session Hijacking
 
@@ -516,7 +522,7 @@ https://launchschool.com/books/http/read/security
 
 - "This type of attack happens when you allow users to input HTML or JavaScript that ends up being displayed by the site directly."
 
-- When given the ability to add additional content to a site, such as comment blocks, users can input explicit HTML or JavaScript code which may alter the host in an unintended way. To prevent such a breach, developers are encouraged to sanitize any input from users, eliminating specific problematic input, or *escaping* the input when displaying it to the console.
+- When given the ability to add additional content to a site, such as comment blocks, users can input explicit HTML or JavaScript code which may alter the host in an unintended way. To prevent such a breach, developers are encouraged to sanitize any input from users, eliminating specific problematic input, or *escape* their input when displaying it to the console.
 
 # Transport Layer Security (TLS)
 
