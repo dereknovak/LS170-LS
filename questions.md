@@ -175,19 +175,35 @@
 ## 76. **Describe the HTTP request/response cycle.**
 
 ## 77. **What is a state in the context of the 'web'?**
+- A state refers to saved information that allows for dynamic accessibility to the web. However, HTTP is a *stateless* protocol in that it does not save state in any part of its implementation, causing each request and response by applications to act independently from any other. For this reason, developers must engineer methods to create a *stateful* environment through the use of sessions, cookies, and AJAX.
+
 ## 78. **What is statelessness?**
+- HTTP is a *stateless* protocol in that it does not save state in any part of its implementation, causing each request and response by applications to act independently from any other. This provides resilience to the HTTP protocol, as no maintenance is required throughout usage; however, lack of state creates a challenging experience for building stateful applications as programmers must find alternative methods of storing information.
+
 ## 79. **What is a stateful Web Application?**
+- A *stateful* Web Application refers to one that can save information between requests, allowing for a dynamic interaction with the Web Application.
+
 ## 80. **How can we mimic a stateful application?**
-## 81. **What is the difference between stateful and ## stateless applications?**
-## 82. **What does it mean that HTTP is a 'stateless ## protocol?** 
-## 83. **Why HTTP makes it difficult to build a stateful ## application?**
-## 84. **How the idea that HTTP is a stateless protocol ## makes the web difficult to secure?** 
-## 85. **What is a `GET` request and how does it work?** 
+
+## 81. **What is the difference between stateful and stateless applications?**
+## 82. **What does it mean that HTTP is a 'stateless protocol?** 
+## 83. **Why HTTP makes it difficult to build a stateful application?**
+## 84. **How the idea that HTTP is a stateless protocol makes the web difficult to secure?** 
+
+## 85. **What is a `GET` request and how does it work?**
+- A `GET` request is an HTTP method that retrieves data from a server. Any time a URL is entered, a link is followed, or a resource is clicked, a `GET` request is made that provides access to the data.
+
 ## 86. **How is `GET` request initiated?**
-## 87. **What is the HTTP response body and what do we use ## it for?**
-## 88. **What are the obligatory components of HTTP ## requests?** 
-## 89. **What are the obligatory components of HTTP ## response?**
-## 90. **Which HTTP method would you use to send sensitive ## information to a server? Why?**
+## 87. **What is the HTTP response body and what do we use it for?**
+- The HTTP response body is the raw data from the resource requested. While this data respresents the encoding of the resource in either HTML, JSON, etc, applications within web browsers interpret the code and display it in a more readable fashion.
+
+## 88. **What are the obligatory components of HTTP requests?**
+- An HTTP request must always contain a method (`GET`/`POST`) as well as the path.
+
+## 89. **What are the obligatory components of HTTP response?**
+- An HTTP response will always include a status code, but everything else is optional.
+
+## 90. **Which HTTP method would you use to send sensitive information to a server? Why?**
 ## 91. **Compare `GET` and `POST` methods.**
 ## 92. **Describe how would you send a `GET` request to a ## server and what would happen at each stage.**
 ## 93. **Describe how would you send `POST` requests to a ## server and what is happening at each stage.**
