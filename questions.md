@@ -158,8 +158,8 @@
 ## 70. **What is URI?**
 - A URI is a string of characters that identifies a specific resourse and can include either its name, protocol, or both.
 
-## 71. **What is the difference between scheme and protocol ## in URL?**
-- A URI is a string of characters that identifies a specific resourse and can include either its name, protocol, or both. A URL is a type of URI that includes *both* the name and protocol. While its technically correct to call a string of characters with both present a URI, it's *more correct* to refer to it as a URL, as its a more specific distinction.
+## 71. **What is the difference between scheme and protocol in URL?**
+- While there is a connection between the scheme and a protocol, they are *not* the same thing; the scheme simply indicates which protocol is being used.
 
 ## 72. **What is HTTP?**
 - HTTP is a text-based request response protocol that allows the transfer of hypertext documents between two web applications. This is accomplished through requests, which can retrieve, add, or change various documents by means of HTTP methods, and the subsequent response, which provides information about the documents and status code of the request.
@@ -204,25 +204,46 @@
 - An HTTP response will always include a status code, but everything else is optional.
 
 ## 90. **Which HTTP method would you use to send sensitive information to a server? Why?**
+- The `POST` HTTP method should be used when sending sensitive information to a server. This is because, in a `GET` method request, all sensitive data is displayed within the URL query string and is therefore easily accessible to a hijacker. Instead, with `POST` method requests, this data is included within the optional HTTP body.
+
 ## 91. **Compare `GET` and `POST` methods.**
-## 92. **Describe how would you send a `GET` request to a ## server and what would happen at each stage.**
-## 93. **Describe how would you send `POST` requests to a ## server and what is happening at each stage.**
-## 94. **What is a status code? What are some of the status ## codes types? What is the purpose of status codes?** 
-## 95. **Imagine you are using an HTTP tool and you ## received a status code `302`. What does this status code ## mean and what happens if you receive a status code like ## that?** 
-## 96. **How do modern web applications 'remember' state ## for each client?**
-## 97. **What role does AJAX play in displaying dynamic ## content in web applications?**
-## 98. **Describe some of the security threats and what can ## be done to minimize them?**
-## 99. **What is the Same Origin Policy? How it is used to ## mitigate certain security threats?**  
-## 100. **What determines whether a request should use ## `GET` or `POST` as its HTTP method?**
-## 101. **What is the relationship between a scheme and a ## protocol in the context of a URL?**
-## 102. **In what ways can we pass information to the ## application server via the URL?**
+## 92. **Describe how would you send a `GET` request to a server and what would happen at each stage.**
+## 93. **Describe how would you send `POST` requests to a server and what is happening at each stage.**
+## 94. **What is a status code? What are some of the status codes types? What is the purpose of status codes?**
+- The **status code** is a three-digit number included in the HTTP response that references the status of the given request. A few common status codes include 200 (successful request), 302 (successful, but redirected), 404 (resource not found), and 500 (server error). These status codes exist to provide status information to the client on their given request.
+
+## 95. **Imagine you are using an HTTP tool and you received a status code `302`. What does this status code mean and what happens if you receive a status code like that?**
+- The 302 status code represents a successful request, however a redirect was required. This means that the resource request exists, but at a different location than at the inputted request.
+
+## 96. **How do modern web applications 'remember' state for each client?**
+- Web applications can exhibit a *stateful* environment with the implementation of **sessions**, **cookies**, and Asynchronous JavaScript and XML (**AJAX**).
+- 
+## 97. **What role does AJAX play in displaying dynamic content in web applications?**
+- AJAX is used to request data and process its response without reloading the current web page. By eliminating this full page refresh, the client's experience with the web application's content becomes faster and more fluid.
+
+## 98. **Describe some of the security threats and what can be done to minimize them?**
+- Due to the stateless nature of HTTP, there are a few security threats that have become commonplace and must be addressed. Anyone can intercept a request, which may house sensitive information. HTTPS implements encryption with every request, giving the ability to decrypt to only the client and server. Foreign parties may also try to post data from a unknown source, so developers can add a *same-origin policy* to prevent access to the data without a matching scheme and host. Session hijacking is another threat that can exist, which occurs when a foreign user intercepts a session ID. To combat this, developers can frequently refresh the ID, making the hijacker's useless. Lastly, a threat may post explicit code directly into a comment box that can change the resource in an unintended way. Developers are encouraged to sanitize any inputs such as this to prevent these unexpected behaviors.
+
+## 99. **What is the Same Origin Policy? How it is used to mitigate certain security threats?**
+- The **same-origin policy** restricts specific interactions between foreign resources, referring to those that originate from a different scheme or host. While more secure, this restriction can make it challenging for developers who require cross-origin requests. To combat this, Cross-origin resource sharing (**CORS**) was developed to permit these cross-origin interactions by implementing a new set of HTTP headers.
+
+## 100. **What determines whether a request should use `GET` or `POST` as its HTTP method?**
+## 101. **What is the relationship between a scheme and a protocol in the context of a URL?**
+## 102. **In what ways can we pass information to the application server via the URL?**
 ## 103. **How insecure HTTP message transfer looks like?**
 ## 104. **What services does HTTP provide and what are the ## particular problems each of them aims to address?**
 ## 105. **What is TLS Handshake?**
-## 106. **What is symmetric key encryption? What is it used ## for?**
+- The TLS handshake is used in the HTTPS encryption process that establishes both the TLS version and cypher used in data exchange between a client and server.
+
+## 106. **What is symmetric key encryption? What is it used for?**
+- Symmetric Key Encryption provides two applications with the same decryption key, allow an exchange of encrypted data between them that only the two can decrypt.
+- 
 ## 107. **What is asymmetric key encryption? What is it ## used for?**
+- Asymmetric Key Encryption provides two application with a public decryption key and only one with a private key. The application without the private key can send an encrypted message to the other using the public key, and the other can decrpyt it using their private key. This allows for one way communication, which is typically used in setting up the shared key that both applications will use in the upcoming symmetric key encryption data exchange.
+- 
 ## 108. **Describe SSL/TLS encryption process.**
 ## 109. **Describe the pros and cons of TLS Handshake**
+- The TLS handshake provides a reliable exchange of a 
 ## 110. **Why do we need digital TLS/SSL certificates?** 
 ## 111. **What is it CA hierarchy and what is its role in ## providing secure message transfer?**
 ## 112. **What is Cipher Suites and what do we need it for?**
@@ -230,7 +251,7 @@
 ## 114. **Compare HTTP and HTTPS.**
 ## 115. **Does HTTPS use other protocols?** 
 ## 116. **How do you know a website uses HTTPS?**
-## 117. **Give examples of some protocols that would be ## used when a user interacts with a banking website. What ## would be the role of those protocols?** 
-## 118. **What is server-side infrastructure? What are its ## basic components?**
+## 117. **Give examples of some protocols that would be used when a user interacts with a banking website. What would be the role of those protocols?** 
+## 118. **What is server-side infrastructure? What are its basic components?**
 ## 119. **What is a server? What is its role?** 
-## 120. **What are optimizations that developers can do in ## order to improve performance and minimize latency?**
+## 120. **What are optimizations that developers can do in order to improve performance and minimize latency?**
