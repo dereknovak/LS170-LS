@@ -539,6 +539,35 @@ TLS Process is used to:
 - "Agree on the various algorithms that will be included in the cipher suite."
 - "Enable the exchange of symmetric keys that will be used for message encryption."
 
+Steps:
+1. 
+- ClientHello
+    - Max version of TLS supported by client
+    - Client's cipher suite
+2. 
+- ServerHello
+    - Max version of TLS supported by server
+    - Selected cipher
+- Certificate
+    - Certificate chain
+    - Public key
+- ServerHelloDone
+    - Nothing else to send
+3. 
+- ClientKeyExchange
+    - Sends Pre Master Key
+- ChangeCipherSpec
+    - Signifies that client is ready to communicate with cipher
+- Finished
+    - Encrypted Verification
+4. 
+- ChangeCipherSpec
+    - Signifies that server is ready to communicate with cipher
+- Finished
+    - Encrypted Verification
+
+
+
 ## Authentication
 https://launchschool.com/lessons/74f1325b/assignments/95e698ab
 
