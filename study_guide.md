@@ -540,6 +540,7 @@ TLS Process is used to:
 - "Enable the exchange of symmetric keys that will be used for message encryption."
 
 Steps:
+
 1. 
 - ClientHello
     - Max version of TLS supported by client
@@ -566,7 +567,11 @@ Steps:
 - Finished
     - Encrypted Verification
 
+### Cipher
 
+- "A cipher is a cryptographic algorithm; in other words they are sets of steps for performing encryption, decryption, and other related tasks. A cipher suite is a suite, or set, of ciphers."
+
+- A cipher is an algorithmic key used to decrypt encoded messages.
 
 ## Authentication
 https://launchschool.com/lessons/74f1325b/assignments/95e698ab
@@ -576,6 +581,8 @@ https://launchschool.com/lessons/74f1325b/assignments/95e698ab
 ### Certificate Authority (CA)
 
 - "If you are presented with a piece of identification, you are much more likely to accept it as genuine if it has been issued by a trustworthy source. When it comes to digital certificates, the trustworthy sources are called Certificate Authorities (CAs)."
+
+- A Certificate Authority (CA) is a trusted authority that issues a certificate to an IP to prove that they are who they claim to be. While not 100% guaranteed, CAs work through a *Chain of Trust*, a reputation built on longevity and prominence, that ensure a client is entrusting their data with the appropriate server.
 
 ## Integrity
 https://launchschool.com/lessons/74f1325b/assignments/a88271cf
@@ -595,5 +602,7 @@ https://launchschool.com/lessons/74f1325b/assignments/a88271cf
 1. HTTP Fundamentals (Great defintions of HTTP/protocol)
 - https://www.youtube.com/watch?v=qv5-5hhsKpE
 
+2. TLS Handshake (Extremely detailed, matches LS)
+- https://www.youtube.com/watch?v=ZkL10eoG1PY&t=1158s
 
 
