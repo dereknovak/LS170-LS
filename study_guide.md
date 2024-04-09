@@ -322,7 +322,7 @@ https://launchschool.com/lessons/cc97deb5/assignments/e3d85587
 
 ### Resource
 
-- ""Resource" is a generic term for things you interact with on the Internet via a URL. This includes images, videos, web pages and other files.
+- ""Resource" is a generic term for things you interact with on the Internet via a URL. This includes images, videos, web pages and other files."
 
 ### Web Browser
 
@@ -525,6 +525,9 @@ https://launchschool.com/books/http/read/security
 - When given the ability to add additional content to a site, such as comment blocks, users can input explicit HTML or JavaScript code which may alter the host in an unintended way. To prevent such a breach, developers are encouraged to sanitize any input from users, eliminating specific problematic input, or *escape* their input when displaying it to the console.
 
 # Transport Layer Security (TLS)
+https://launchschool.com/lessons/74f1325b/assignments/83bf156b
+
+- The Transport Layer Security (TLS) protocol is used throughout the HTTPS request/response cycle to add its extra layer of security. This is achieved through the *encryption* of data using a cipher, *authorization* verified by a Certificate Authority, and *integrity* maintained by way of the Message Authorization Code.
 
 ## Encryption
 https://launchschool.com/lessons/74f1325b/assignments/54f6defc
@@ -590,6 +593,8 @@ https://launchschool.com/lessons/74f1325b/assignments/a88271cf
 - "...a process to detect whether a message has been interfered with or faked."
 
 ### TLS Encapsulation
+
+- "The OSI model defines TLS as a Session layer protocol, and so existing in between Application layer (where HTTP resides) and the Transport layer (where TCP resides)."
 
 ### Message Authentication Code (MAC)
 
