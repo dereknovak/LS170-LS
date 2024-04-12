@@ -206,10 +206,11 @@ https://launchschool.com/lessons/4af196b9/assignments/81df3782
 https://launchschool.com/lessons/4af196b9/assignments/b222ecfb
 
 - "This means that they are not tied to a specific device, but can be assigned as required to devices as they join a network."
+- "When an IP packet is received by a router, the router examines the destination IP address and matches it against a list of network addresses in its routing table."
 - "The Protocol Data Unit (PDU) within the IP Protocol is referred to as a packet."
 - "Within both models, the primary function of protocols at this layer is to facilitate communication between hosts (e.g. computers) on different networks."
 
-- An Internet Protocol (IP) address is a 32-bit identifier, broken into a series of 4 integers, that represent a specific device or application within a network.
+- An Internet Protocol (IP) address is a 32-bit identifier, broken into a series of 4 integers, that is dynamically assigned to a device on a network. The range in which an IP address is assigned is based upon a network hierarchy, splitting each part of the network into logical sub-networks.
 
 # The Transport Layer
 
