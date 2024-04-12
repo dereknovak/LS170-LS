@@ -29,7 +29,7 @@
 
 # The Internet
 
-- The *Internet* is a network of networks.
+- The *Internet* is a vast interconnected network of networks, linking hosts from all over the globe using a series of network devices and allowing the exchange of information through the implementation of standardized protocols. Data is exchanged via network devices, such as switches and routers, relaying infomation through various requests and responses from the hosts. 
 
 ## Network
 https://launchschool.com/lessons/4af196b9/assignments/268243e5
@@ -246,19 +246,19 @@ https://launchschool.com/lessons/2a6c7439/assignments/d09ddd52
 
 ### Three-way Handshake
 
-- A three-way handshake is used within TCP to establish a working connection between two applications.
+- A three-way handshake is used within TCP to establish a working connection between two applications. The client will first send a message with the SYN flag raised, to which the server will respond with a raised SYN-ACK flag raised. Once received, the client will send a second message with the ACK flag raised, and once this is received by the server, communication can commence.
 
 ### Flow Control
 
 - "Flow Control is a mechanism to prevent the sender overwhelming the receiver with more data than it can process. Each participant in a connection lets the other participant know how much data it is willing to accept using a field in the TCP header."
 
-- To prevent overwhelming the receiver with too much data from the sender, a TCP segment implements **flow control**. By establishing each network's *window size*, the segment can dynamically control how much data is being sent at one time to prevent clutter which could result in dropped data.
+- To prevent overwhelming the receiver with too much data from the sender, TCP implements **flow control**. By establishing each network's *window size*, the segment can dynamically control how much data is being sent at one time to prevent clutter which could result in dropped data.
 
 ### Congestion Avoidance
 
 - "Congestion avoidance is a process by which TCP uses data loss (based on the volume of retransmissions required) as a feedback mechanism to determine how congested the network is, and adjusts the amount of data being sent accordingly."
 
-- To prevent overwhelming the network with too much data from the sender, a TCP segment implements **congestion avoidance**. By analyzing areas of consistent network congestion, and therefore dropped packets, the segment will reduce the size of its *transmission window*, limiting the total unacknowledged segments that the sender can have at a given time.
+- To prevent overwhelming the network with too much data from the sender, TCP implements **congestion avoidance**. By analyzing the Real-Time Transmission (RTT) and absence of an ACK (dropped packet), the segment will reduce the size of its *transmission window*, limiting the total unacknowledged segments that the sender can transmit at a given time.
 
 ## UDP (User Datagram Protocol)
 https://launchschool.com/lessons/2a6c7439/assignments/9bb82c9b
@@ -298,9 +298,13 @@ https://launchschool.com/lessons/cc97deb5/assignments/e3d85587
 
 - "The World Wide Web, or web for short, is a **service** that can be accessed via the internet. In simple terms it is a vast information system comprised of resources which are navigable by means of a URL (Uniform Resource Locator)."
 
+- The World Wide Web is a **service** used to engage with the internet, encompassing a vast system of information that can be navigated via a URL.
+
 ### HTML
 
 - "Hypertext Markup Language (HTML) was the means by which the resources in this system should be uniformly structured."
+
+- Hypertext Markup Language (**HTML**) is a plain-text file that describes both structure and layout of a web page, forming the foundation of the World Wide Web.
 
 ### URL
 
