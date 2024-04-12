@@ -243,6 +243,8 @@ https://launchschool.com/lessons/2a6c7439/assignments/d09ddd52
 
 - The Transmission Control Protocol (TCP) allows for reliable transfer between the client and server, implementing a three-way handshake design to ensure all packets of information make it from one to the other.
 
+- Transmission Control Protocol (**TCP**) is a connection-oriented protocol focused primarily on reliable data exchange, implementing services to ensure that all data arrives in tact, in order, and without duplication.
+
 ### Included
 
 - Connection-oriented protocol
@@ -275,10 +277,10 @@ https://launchschool.com/lessons/2a6c7439/assignments/d09ddd52
 ## UDP (User Datagram Protocol)
 https://launchschool.com/lessons/2a6c7439/assignments/9bb82c9b
 
-The User Datagram Protocol (UDP) provides data transfer both speed and flexibility at the cost of reliability.
-
 - "The Protocol Data Unit (PDU) of UDP is known as a Datagram."
 - "This simplicity provides two things to a software engineer: speed and flexibility."
+
+- The User Datagram Protocol (**UDP**) is a connectionless protocol focused primarily on speed and flexibility at the cost of reliability. While a basic checksum algorithm is utilized, no additional services are implemented that check the data exchanged; that said, its flexibility allows developers to add specific services without including the full TCP package.
 
 ### Included:
 
