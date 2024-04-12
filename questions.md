@@ -1,62 +1,98 @@
 ## 1. **What is a network?**
-- two or more host or devices
+- A network, in its simplest form, is formed when two devices are connected, allowing communication and data to be exchanged between them.
 
 ## 2. **What is the Internet?**
-
-- connection between multiple networks connected thru switches/hubs/routers
-- physical infistructure and the protocols
+- The Internet is a network of networks, providing connections between these various networks through switches, routers, and other forms of network connection. Along with this physical infrustructure, the Internet is built on a series of protocols that allow each individual device on the network communicate successfully with other devices.
 
 ## 3. **Is the Internet the same thing as a network?**
+- The Internet is a network, but a network is not necessarily the Internet. The Internet is a *network of networks*, essentially creating a network relationship between two or more other networks.
 
 ## 4. **What is WEB (world wide web)**
+- The World Wide Web is a service that is offered within the Internet. While the Internet is a the physical infrustructure and protocols of the network, the Web is how we interact with it.
+
 - A service that is offered via the internet
 - The content or services you access using the internet
 
-## 5. **What is the difference between network, Internet, ## and WEB?**
+## 5. **What is the difference between network, Internet, and WEB?**
+- A network is a communication connection between two or more devices, which is then expanded to form the Internet, a *network of networks*. The service used to interact with the Internet is know as the World Wide Web.
+
 ## 6. **What are LAN and WLAN?**
+- A Local Area Network (LAN) is exactly as it sounds: a network formed with an area of close proximity. These are generally connected in a physical manner (copper cables, switches, etc); however, it can be expanded wirelessly to form a Wireless Local Area Network (WLAN). In general, LAN is faster and more reliable, as it relies on a physical connection. This is contrasts by the radio waves used by WLAN, which is less reliable but much more portable.
+
 - local area network (multiple devices connect in a close location)
 - wireless version (WLAN)
 - LAN would be faster
+
 ## 7. **What is a protocol?**
+- A *protocol* is a system of rules that two hosts follow to allow for successful data exchange or transmission. Without these agreed-upon rules, information between the hosts would become chaotic and likely misunderstood and unprotected.
+
 - System of rules that dictate how devices communicate
 - IP
 - Ethernet protocol at each layer
 - TCP/UDP
-## 8. **What is the role of protocols?** 
+## 8. **What is the role of protocols?**
+- Protocol establish the system of rules that two hosts follow to allow for successful data exchange or transmission. Without these agreed-upon rules, information between the hosts would become chaotic and likely misunderstood and unprotected.
+
 ## 9. **Why there are many different types of protocols?**
+- Because there are so many devices with different applications to the overall network infrustructure, different kinds of protocols are made to allow the devices to communicate in their most suitable way. Otherwise, the task of a protocol would become too complex and data exchange would be incredibly fragile.
+
 ## 10. **What does it mean that a protocol is stateless?**
+- A protocol is *stateless* when it does not persist any information between exchanges, causing each new transfer of data to act independently of another. While seemingly inefficient, this structure allows for a flexible network to exist to which developers can build with the necessary speed and security that is intended.
 
-- AJAX, Sessions, Cookies, Query String Parameters
-## 11. **Explain briefly what are OSI and TCP/IP models? ## What is the purpose of having models like that?**
+## 11. **Explain briefly what are OSI and TCP/IP models? What is the purpose of having models like that?**
+- Both the OSI and TCP/IP models represent the general process to which data is exchanged between networks. Broadly speaking, a client will request data from a server. This request will identify and package the necessary port number and IP address, using the MAC address from each intermediate hop to relay the request to the server. Once arrived, the original request will find its way to the server, which will issue a response in a reverse route.
+- Having models such as these allows developers to understand how this information is exchanged so that the necessary implementation of the systems and security will work with the existing network.
 
-- Different models of network communication
 ## 12. **What is PDU? What is its role?**
+- A protocol data unit (**PDU**) represents a block of data that is transferred across a network, with each PDU receiving a different name depending on its placement within the OSI or TCP/IP model. As data moves across the network, the The entire PDU for a specific layer of the OSI model--header, data payload, trailer--is encapsulated as the data payload for the layer below it. This allows each layer to operate independently, disregarding any information from other layers and providing a 'service' to the upward layer.
+
 - Encapsultates data we are tying to send, along with its metadata
 - Packages it up to send to the next layer
 - Use payload for word for information
-## 13. **What is Data Payload?** 
-## 14. **What is the relationship between PDU and Data ## Payload?** 
+
+## 13. **What is Data Payload?**
+- A data payload represents a chunk of data that is being sent from one host to another, complimented with a header to provide metadata. Each PDU within the OSI and TCP/IP models are encapsulated into the data payload for the lay below it, allowing each layer to operate independently and deliver each layer's respective data payload to the appropriate host.
+
+## 14. **What is the relationship between PDU and Data Payload?** 
+- The PDU from the layer above within the OSI and TCP/IP models are encapsulated into its data payload, allowing each layer of the models to operate independently from one another.
+
 ## 15. **Explain How lower-level protocols work in general?**
 - Different names for the PDU
 
 ## 16. **What is encapsulation in the context of networking?**
-- PDU for the current layer becomes the data payload for the lower layer
-## 17. **Why do we need encapsulation?** 
+- The entire PDU for a specific layer of the OSI model--header, data payload, trailer--is encapsulated as the data payload for the layer below it. For example, the TCP segment of a data exchange is encapsulated within the data payload of the IP packet, which is then encapsulated as the data payload of the ethernet frame. This allows each layer to operate independently, disregarding any information from other layers and providing a 'service' to the upward layer.
+
+## 17. **Why do we need encapsulation?**
+- Encapsulating the PDU from the layer above into the data payload of the present PDU allows each layer to abstact away its information while the data package moves from one host to another. These layers can function independently from one another, focusing on their given task. For example, the TCP segment is only concerned with making its way to the appropriate application using the destination port number within its PDU, while the IP packet from the layer below is concerned with simply *getting to* the device by way of an IP address.
+
 - Allows each layer to abstract away its information while the moves
 - Layer below does not need to know what's going on above
+
 ## 18. **What are the characteristics of a physical network?** 
+- The physical network is made up of all the working devices connected together to allow for network communication. These include the devices themselves, the switches and routers to relay information to the appropriate parties, and the cables, fiber optics, and radio waves traversed.
+
 - The physical devices in conjuction
-## 19. **How can we as developers deals with the ## limitations of physical network?**
+
+## 19. **How can we as developers deals with the limitations of physical network?**
+- Developers can deal with these limitations by implementing checks within the virtual network to ensure all data is transferring successfully. TCP segments, for example, employ an array of different reliability checks (in-order delivery, de-duplication, message acknowledgements and retransmission) that allow lost data along these paths to be resubmitted and reorganized if out of order. To span long distances, developers may also implement repeaters to resend data while along the path, preventing packets from dropping.
+
 ## 20. **What is Latency?**
-- Measure of delay
+- **Latency** is the measure of time that it takes for data to move from one part of a network to another.
+
+- Actual time to process
+- Actual time to put on stack
+- Time in que
+- Propogation delay
+
 ## 21. **What is** **Bandwidth?**
-- Measure of capacity
-- Specify that it's a set period of time
-- how much you can send in (x) amount of time
+- **Bandwidth** refers to the total data that can be transferred from one device to another within a specific timeframe.
+
 ## 22. **What are** **Network 'Hops'?**
-- Each time a transmission changes
-- The number of hops can effect the latency of a network
-## 23. **What is the relationship between network 'Hops' ## and latency?** 
+- A **hop** is the movement from one device to another. Each IP package keeps track of its hop count, preventing bugs in the path from halting a delivery using the hop limit.
+
+## 23. **What is the relationship between network 'Hops' and latency?**
+- In general, the more hops required of a network transmission, the more delayed the latency will be.
+
 ## 24. **What is a switch and what is it used for?**
 - Used in LAN
 ## 25. **What is a hub and what is it used for?**
@@ -68,9 +104,9 @@
 ## 27. **What is a router and what is it used for?**
 - Used in the larger internet 
 ## 28. **What is the difference between a switch, hub, ## modem, and router?**
-## 29. **How does the Internet works?**
-- Data on servers that can be accessed by clients
-- Servers processes request and sends back a response to the client
+## 29. **How does the Internet work?**
+- The internet is a network of networks, connecting millions of hosts from across the globe. Hosts are represented by either a client (making a request) or a server (responding to a request). With each request, data is packed into a series of PDUs and encapsulated within the data payload of the PDU beneath it and is sent through an array of switches, routers, and other devices until arriving at the server to which the client is requesting data. After decapsulation of the data and processing of the request, the server then sends back a response to the client in a similar but reversed route as the client.
+- Broadly speaking, each interaction with a resource prompts this request and response cycle, resulting in tens of billions of cycles occuring across the world per second.
 
 ## 30. **What is a MAC address and what is its role in ## network communication?** 
 - Part of the Ethernet frames
@@ -140,6 +176,8 @@
 ## 64. **What is HTML?**
 - The Hypertext Markup Language (HTML) is a structured file that can include headings, paragraphs, lists, and most importantly links, which is where *hypertext* is derived.
 
+- structure/organization of the page
+
 ## 65. **What is a URL and what components does it have?**
 - A URL is a type of URI that includes *both* the name and protocol. While its technically correct to call a string of characters with both present a URI, it's *more correct* to refer to it as a URL, as its a more specific distinction.
 - A URL must consist of a scheme and a host. They can also include a port number (no port number uses a default), a path, a query string, and a fragment.
@@ -147,7 +185,10 @@
 ## 66. **What is a Query string? What it is used for?**
 - The **query string**, which is made up of one or more *query parameters* are used to send additional data to the server upon request.
 
+- can be used to persist state
+
 ## 67. **What URL encoding is and when it might be used for?**
+- Special Character's using UTF-8
 
 
 ## 68. **Which characters have to be encoded in the URL? Why?**
@@ -164,13 +205,16 @@
 ## 72. **What is HTTP?**
 - HTTP is a text-based request response protocol that allows the transfer of hypertext documents between two web applications. This is accomplished through requests, which can retrieve, add, or change various documents by means of HTTP methods, and the subsequent response, which provides information about the documents and status code of the request.
 
+- HTTP is in plain text
+
 ## 73. **What is the role of HTTP?**
+- HTTP is a protocol established at the Application layer of a Networking model. It's a text-based request response protocol that allows the transfer of hypertext documents between two web applications.
 
 ## 74. **Explain the client-server model of web interactions, and the role of HTTP as a protocol within that model**
 - When an application (client) makes a request to another application (server), an exchange of data is made. This is accomplished through requests, which can retrieve, add, or change various documents by means of HTTP methods, and the subsequent resposne, which provides information about the documents and status code of the request.
 
 ## 75. **What are HTTP requests and responses? What are the components of each?**
-- Any time that you enter a URL or click on a resource, your web browser (client) is making a request to its respective server. Each request will contain a header that indicates the name of the server, acceptable languages that can be used, the client's ID, the type of connection preferred, and more. Upon each request, a response is provided by the server. Similarly, a header is used to provide information, including the type of data encoding, the name of the server, the location of the resource, the type of data, and more. Each request will also include the type of request method used (GET, POST) as well as a status code to indicate the status of the request.
+- Any time that you enter a URL or click on a resource, your web browser (client) is making a request to its respective server. Each request will contain a header that indicates the name of the server, acceptable languages that can be used, the client's ID, the type of connection preferred, and more. Upon each request, a response is provided by the server. Similarly, a header is used to provide information, including the type of data encoding, the name of the server, the location of the resource, the type of data, and more. Each request will also include the type of request method used (GET, POST) and the response will return a status code to indicate the status of the request.
 
 ## 76. **Describe the HTTP request/response cycle.**
 
@@ -178,7 +222,7 @@
 - A state refers to saved information that allows for dynamic accessibility to the web. However, HTTP is a *stateless* protocol in that it does not save state in any part of its implementation, causing each request and response by applications to act independently from any other. For this reason, developers must engineer methods to create a *stateful* environment through the use of sessions, cookies, and AJAX.
 
 ## 78. **What is statelessness?**
-- HTTP is a *stateless* protocol in that it does not save state in any part of its implementation, causing each request and response by applications to act independently from any other. This provides resilience to the HTTP protocol, as no maintenance is required throughout usage; however, lack of state creates a challenging experience for building stateful applications as programmers must find alternative methods of storing information.
+- HTTP is a *stateless* protocol in that it does not persist state in any part of its implementation, causing each request and response by applications to act independently from any other. This provides resilience to the HTTP protocol, as no maintenance is required throughout usage; however, lack of state creates a challenging experience for building stateful applications as programmers must find alternative methods of storing information.
 
 ## 79. **What is a stateful Web Application?**
 - A *stateful* Web Application refers to one that can save information between requests, allowing for a dynamic interaction with the Web Application.
@@ -217,9 +261,13 @@
 
 ## 96. **How do modern web applications 'remember' state for each client?**
 - Web applications can exhibit a *stateful* environment with the implementation of **sessions**, **cookies**, and Asynchronous JavaScript and XML (**AJAX**).
+
+- combination of some
 - 
 ## 97. **What role does AJAX play in displaying dynamic content in web applications?**
 - AJAX is used to request data and process its response without reloading the current web page. By eliminating this full page refresh, the client's experience with the web application's content becomes faster and more fluid.
+
+- Polling/Long-polling
 
 ## 98. **Describe some of the security threats and what can be done to minimize them?**
 - Due to the stateless nature of HTTP, there are a few security threats that have become commonplace and must be addressed. Anyone can intercept a request, which may house sensitive information. HTTPS implements encryption with every request, giving the ability to decrypt to only the client and server. Foreign parties may also try to post data from a unknown source, so developers can add a *same-origin policy* to prevent access to the data without a matching scheme and host. Session hijacking is another threat that can exist, which occurs when a foreign user intercepts a session ID. To combat this, developers can frequently refresh the ID, making the hijacker's useless. Lastly, a threat may post explicit code directly into a comment box that can change the resource in an unintended way. Developers are encouraged to sanitize any inputs such as this to prevent these unexpected behaviors.
@@ -245,13 +293,31 @@
 ## 109. **Describe the pros and cons of TLS Handshake**
 - The TLS handshake provides a reliable exchange of a 
 ## 110. **Why do we need digital TLS/SSL certificates?** 
-## 111. **What is it CA hierarchy and what is its role in ## providing secure message transfer?**
+- Certificates issued to a server by a Certificate Authority are used to proved that the IP is who they say they are.
+
+## 111. **What is it CA hierarchy and what is its role in providing secure message transfer?**
 ## 112. **What is Cipher Suites and what do we need it for?**
+- A Cipher Suite includes all of the ciphers that a client has the ability to use. The Cipher Suite is shared with a server upon the TLS handshake, and the server will select an included cipher to use for the initial ansynchronous encryption.
+
 ## 113. **How does TLS add a security layer to HTTP?**
+
 ## 114. **Compare HTTP and HTTPS.**
+- HTTP and HTTP are exactly the same except for one element: added security. With the 'S' representing 'Secure', HTTPS implements the Transport Layer Security (TLS) into each request, encrypting every message exchange between the client and server.
+
 ## 115. **Does HTTPS use other protocols?** 
+- HTTPS uses the Transport Security Layer (TLS) protocol to establish and maintain a secure connection between two hosts.
+
 ## 116. **How do you know a website uses HTTPS?**
+- You can see that a website uses HTTPS if the URL's scheme includes `https://`. In many browsers, you can also see a padlock next to the URL that will provide information on the host's security, which if referencing TLS or SSL, HTTPS is being used.
+
 ## 117. **Give examples of some protocols that would be used when a user interacts with a banking website. What would be the role of those protocols?** 
+- A bank would most likely use HTTPS in conjunction with TLS, as this is an easy and very powerful security system to implement. TLS would encrypt all requests and responses made by the client and bank server, keeping all data confidential. In terms of a transport protocol, TCP would most likely be used over UDP, as reliablity is much more vital than speed when working with personal finances.
+
 ## 118. **What is server-side infrastructure? What are its basic components?**
 ## 119. **What is a server? What is its role?** 
 ## 120. **What are optimizations that developers can do in order to improve performance and minimize latency?**
+- Limit the total number of resources that need to be fetched
+- Compress data using a utility such at gzip
+- Reuse a TCP connection with implementation of keep-alive
+- Optimize the DNS lookup process
+- Incorporate a cache to include a short-term memory bank

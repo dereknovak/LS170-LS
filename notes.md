@@ -34,3 +34,24 @@ Study Guide:
 -understanding of various security risks that can affect HTTP, and be able to outline measures that can be used to mitigate against these risks
 -different services that TLS can provide and a broad understanding of each of those services
 
+#### Session of Kip
+
+- Networks of networks that communicate with each other by communicate with each other by using IP addresses and uses DNS to connect to the appropriate location
+
+- dynamically assign values to devices
+- port number enables multiplexing/demultiplexing
+
+- IP vs MAC
+    - Hiearchy
+    -
+
+- DNS
+    - DNS server itself cache
+    - ISP cache
+    - Router
+
+- host device trying to access resource on another host device
+- A server is a collection of servers working in concert
+
+
+- shceme defines the method you want to use to access a host

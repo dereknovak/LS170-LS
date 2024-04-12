@@ -16,6 +16,7 @@
     - [World Wide Web](#the-world-wide-web)
     - [URL Parts](#url-parts)
     - [Query String Parts](#query-string-parts)
+    - [Encoding](#encoding)
     - [Requests](#requests)
     - [Responses](#responses)
     - [Headers](#headers)
@@ -97,6 +98,8 @@ Wikipedia: https://en.wikipedia.org/wiki/OSI_model
 https://launchschool.com/lessons/4af196b9/assignments/21ef33af
 
 "...a Protocol Data Unit (PDU) is an amount or block of data transferred over a network. Different protocols or protocol layers refer to PDUs by different names. At the Link/ Data Link layer, for example, a PDU is known as a frame. At the Internet/ Network layer it is known as a packet. At the Transport layer, it is known as a segment (TCP) or datagram (UDP)."
+
+- A protocol data unit (**PDU**) represents a block of data that is transferred across a network, with each PDU receiving a different name depending on its placement within the OSI or TCP/IP model.
 
 Specific Layer PDUs:
 
@@ -195,6 +198,8 @@ https://launchschool.com/lessons/4af196b9/assignments/81df3782
 - Media Access Control address
 - "Since this address is linked to the specific physical device, and (usually) doesn't change, it is sometimes referred to as the physical address or burned-in address. MAC Addresses are formatted as a sequence of six two-digit hexadecimal numbers, e.g. 00:40:96:9d:68:0a, with different ranges of addresses being assigned to different network hardware manufacturers."
 
+- The Media Access Control (**MAC**) address is an address, formatted as a sequence of six two-digit hexadecimal numbers, that is linked to the Network Interface Card (NIC) of a specific physical device and typically never changes.
+
 ## The Network Layer
 
 ### Internet Protocol (IP) address
@@ -254,11 +259,15 @@ https://launchschool.com/lessons/2a6c7439/assignments/d09ddd52
 
 - To prevent overwhelming the receiver with too much data from the sender, TCP implements **flow control**. By establishing each network's *window size*, the segment can dynamically control how much data is being sent at one time to prevent clutter which could result in dropped data.
 
+- The server is dictating
+
 ### Congestion Avoidance
 
 - "Congestion avoidance is a process by which TCP uses data loss (based on the volume of retransmissions required) as a feedback mechanism to determine how congested the network is, and adjusts the amount of data being sent accordingly."
 
 - To prevent overwhelming the network with too much data from the sender, TCP implements **congestion avoidance**. By analyzing the Real-Time Transmission (RTT) and absence of an ACK (dropped packet), the segment will reduce the size of its *transmission window*, limiting the total unacknowledged segments that the sender can transmit at a given time.
+
+- The client is dictating. Client is sending a lot of data
 
 ## UDP (User Datagram Protocol)
 https://launchschool.com/lessons/2a6c7439/assignments/9bb82c9b
@@ -389,6 +398,16 @@ Query String => `?product=iphone&size=32gb&color=white`
 - A parameter is notated by its *name* and *value*.
 - Each parameter is separated by `&`.
 - Because certain special characters cannot be used in the query string, a UTF-8 code will be used to represent them. A space, for example, uses `%20`, such as `launch%20school`.
+
+## Encoding
+
+- Because URLs are designed to only accept specific characters within the standard ASCII character set, some characters that are desired to be used in the URL must be encoded. This is achieved using the `%` symbol, followed by two hexadecimal digits, converting something like `%20` into a `' '` character.
+
+Reasons for encoding:
+
+1. The character is not included in the standard ASCII character set.
+2. The character is "unsafe" as it may be misinterpreted or modified in specific situations.
+3. The character is used in a standard URL scheme.
 
 ## Requests
 https://launchschool.com/books/http/read/making_requests
@@ -614,4 +633,6 @@ https://launchschool.com/lessons/74f1325b/assignments/a88271cf
 2. TLS Handshake (Extremely detailed, matches LS)
 - https://www.youtube.com/watch?v=ZkL10eoG1PY&t=1158s
 
+3. How does the Internet Work (Super fun read)
+https://jsinibardy.com/how-internet-works
 
