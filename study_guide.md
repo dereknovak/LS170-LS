@@ -198,7 +198,7 @@ https://launchschool.com/lessons/4af196b9/assignments/81df3782
 - Media Access Control address
 - "Since this address is linked to the specific physical device, and (usually) doesn't change, it is sometimes referred to as the physical address or burned-in address. MAC Addresses are formatted as a sequence of six two-digit hexadecimal numbers, e.g. 00:40:96:9d:68:0a, with different ranges of addresses being assigned to different network hardware manufacturers."
 
-- The Media Access Control (**MAC**) address is an address, formatted as a sequence of six two-digit hexadecimal numbers, that is linked to the Network Interface Card (NIC) of a specific physical device and typically never changes.
+- The Media Access Control (**MAC**) address is an address, formatted as a sequence of six two-digit hexadecimal numbers, that is linked to the Network Interface Card (NIC) of a specific physical device and typically never changes. While useful in the exchange of Ethernet frames between adjacent devices, MAC addresses do not scale well, as they are non-hiarchical and illogical in nature.
 
 ## The Network Layer
 
@@ -220,6 +220,8 @@ https://launchschool.com/lessons/2a6c7439/assignments/41113e98
 ### Multiplexing
 
 - "In the context of a communication network, this idea of transmitting multiple signals over a single channel is known as multiplexing, with demultiplexing being the reverse process."
+
+- **Multiplexing** occurs when multiple signals are transmitted over a single channel. 
 
 ### Port
 
@@ -505,7 +507,7 @@ Typical status codes:
 ## Stateful Web Applications
 https://launchschool.com/books/http/read/statefulness
 
-- HTTP is a *stateless* protocol in that it does not save state in any part of its implementation, causing each request and response by applications to act independently from any other. This provides resilience to the HTTP protocol, as no maintenance is required throughout usage; however, lack of state creates a challenging experience for building stateful applications as programmers must find alternative methods of storing information.
+- HTTP is a *stateless* protocol in that it does not persist state in any part of its implementation, causing each request and response by applications to act independently from others. This provides resilience to the HTTP protocol, as no maintenance is required throughout usage; however, lack of state creates a challenging experience for building stateful applications as programmers must find alternative methods of storing information.
 
 ### Sessions
 
