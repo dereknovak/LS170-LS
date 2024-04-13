@@ -109,7 +109,7 @@ Specific Layer PDUs:
 
 ### Encapsulation of Data
 
-- The entire PDU for a specific layer of the OSI model--header, data payload, trailer--is encapsulated as the data payload for the layer below it. For example, the TCP segment of a data exchange is encapsulated within the data payload of the IP packet, which is then encapsulated as the data payload of the ethernet frame. This allows each layer to operate independently, disregarding any information from other layers and providing a 'service' to the upward layer.
+- The entire PDU for a specific layer of a network model--header, data payload, trailer--is encapsulated as the data payload for the layer below it. For example, the TCP segment of a data exchange is encapsulated within the data payload of the IP packet, which is then encapsulated as the data payload of the ethernet frame. This allows each layer to operate independently, disregarding any information from other layers and providing a 'service' to the upward layer.
 
 Quiz Answers:
 
@@ -150,6 +150,7 @@ Khan Academy
 - **Latency** is the measure of time that it takes for data to move from one part of a network to another.
 
 Different types of delay:
+
 - Propagation delay
 - Transmission delay
 - Processing delay
@@ -306,6 +307,8 @@ https://launchschool.com/books/http/read/background
 https://launchschool.com/lessons/cc97deb5/assignments/c604eb60
 
 - "We can perhaps think of Application layer protocols as being the rules for how applications talk to each other at a syntactical level."
+
+- The Application layer's job in regards to the OSI model allows applications to share information at a syntactical level. Certain applications, such as e-mail clients or web browser, require different kinds of communcation, which is where the Application layer protocols come to shine.
 
 ## The World Wide Web
 https://launchschool.com/lessons/cc97deb5/assignments/e3d85587
@@ -587,7 +590,7 @@ Steps:
     - Nothing else to send
 3. 
 - ClientKeyExchange
-    - Sends Pre Master Key
+    - Sends Pre Master Secret
 - ChangeCipherSpec
     - Signifies that client is ready to communicate with cipher
 - Finished
